@@ -37,7 +37,7 @@ execute 'highlight default NoteTask guifg=' . yepowhite . ' ctermfg=7'
 " ----[ [x] task ]---------------------------------------------------
 
 syntax match NoteTaskNo     "^\s*\[x\].*$" contains=NoteTaskNo,@NoSpell
-execute 'highlight default NoteTaskN guifg=' . yepred . ' ctermfg=7'
+execute 'highlight default NoteTaskNo guifg=' . yepred . ' ctermfg=7'
 
 " ----[ [✓] task - glyph from [y] ]----------------------------------
 
