@@ -12,6 +12,7 @@ let yepowhite   = '#dee2e8'
 let yepred      = '#ff1457'
 let yepdred     = '#1c0009'
 let yepgreen    = '#54c59f'
+let yeporange   = '#8f552f'
 
 " ----[ comments ]---------------------------------------------------
 
@@ -20,7 +21,7 @@ highlight def link NoteComment Comment
 
 " ----[ tagges line ]------------------------------------------------
 
-syntax match NoteTag     "\~\w\+"
+syntax match NoteTag      "^\s*\~\+.*"
 highlight def link NoteTag Identifier
 
 " ----[ todo ]-------------------------------------------------------
@@ -35,19 +36,21 @@ execute 'highlight default NoteTask guifg=' . yepowhite . ' ctermfg=7'
 
 " ----[ [x] task ]---------------------------------------------------
 
-syntax match NoteTaskN     "^\s*\[x\].*$" contains=NoteTaskN,@NoSpell
+syntax match NoteTaskNo     "^\s*\[x\].*$" contains=NoteTaskNo,@NoSpell
 execute 'highlight default NoteTaskN guifg=' . yepred . ' ctermfg=7'
 
 " ----[ [✓] task - glyph from [y] ]----------------------------------
 
 setlocal winhighlight+=Conceal:NoteTaskY
-syntax match NoteTaskY /\[\zsy\ze\]/ contained containedin=NoteLineYes conceal cchar=✓
-syntax match NoteLineYes /^\s*\%(-\s\)\?\[y\].*$/ contains=NoteTaskY,@NoSpell
+syntax match NoteTaskYes /\[\zsy\ze\]/ contained containedin=NoteLineYes conceal cchar=✓
+syntax match NoteLineYes /^\s*\%(-\s\)\?\[y\].*$/ contains=NoteTaskYes,@NoSpell
 execute 'highlight default NoteLineYes guifg=' . yepgreen . ' ctermfg=7'
 execute 'highlight default NoteTaskY   guifg=' . yepgreen . ' ctermfg=7'
 
+" ----[ [?] task ]---------------------------------------------------
 
-
+syntax match NoteTaskMaybe     "^\s*\[?\].*$" contains=NoteTaskMaybe,@NoSpell
+execute 'highlight default NoteTaskMaybe guifg=' . yeporange . ' ctermfg=7'
 
 " ===================================================================
 " ----[ end ]--------------------------------------------------------
