@@ -19,7 +19,7 @@ let yeporange   = '#8f552f'
 syntax match NoteComment  "^#\+.*"      contains=@NoSpell
 highlight def link NoteComment Comment
 
-" ----[ tagges line ]------------------------------------------------
+" ----[ tagged line ]------------------------------------------------
 
 syntax match NoteTag      "^\s*\~\+.*"
 highlight def link NoteTag Identifier
@@ -33,6 +33,11 @@ highlight def link NoteTodo Todo
 
 syntax match NoteTask     "^\s*\[-\].*$" contains=NoteTask,@NoSpell
 execute 'highlight default NoteTask guifg=' . yepowhite . ' ctermfg=7'
+
+" ----[ [+] task ]---------------------------------------------------
+
+syntax match NoteTaskActive     "^\s*\[+\].*$" contains=NoteTaskNo,@NoSpell
+execute 'highlight default NoteTaskActive guifg=' . yepyellow . ' ctermfg=7'
 
 " ----[ [x] task ]---------------------------------------------------
 
