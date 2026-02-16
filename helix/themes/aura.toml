@@ -82,6 +82,16 @@ markup = "purple"
 "diff.delta" = "orange" 
 "diff.minus" = "red"
 
+"note.urgent" = { fg = "red" }
+"note.todo" = { fg = "white" }
+"note.partial" = { fg = "yellow" }
+"note.done" = { fg = "green" }
+"note.question" = { fg = "orange" }
+"note.block" = { fg = "gray" }
+"note.next" = { fg = "purple" }
+
+
+
 [palette]
 # dark soft/dim
 purple = "#8464c6" # 132,100,198	accent1	primary color	
