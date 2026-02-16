@@ -1,0 +1,5 @@
+[[language]]
+name = "note"
+grammar = "note"
+scope = "source.note"
+file-types = ["note"]
